@@ -1,3 +1,17 @@
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel]
+build-verbosity = 1
+
+[tool.cibuildwheel.linux]
+before-build = [
+    "yum install -y openssl-devel || apt-get install -y libssl-dev || apk add openssl-dev"
+]
+
+[tool.cibuildwheel.macos]
+before-build = ["brew install openssl"]
+
+[tool.cibuildwheel.windows]
+before-build = ["choco install openssl -y"]
