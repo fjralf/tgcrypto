@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/TgCrypto-pyrofork
+      url: https://pypi.org/p/TgCrypto
     permissions:
       id-token: write  # OIDC trusted publishing
 
